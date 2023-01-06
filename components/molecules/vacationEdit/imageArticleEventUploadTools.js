@@ -5,9 +5,9 @@ import Image from "next/image";
 import { url_media, url_media_local } from "../../../config/url";
 import { Box } from "@mui/system";
 import AppContext from "../../../config/context/app";
-import APIDonasiImageUpload from "../../../config/api/donasi/imageUpload";
+import APIEventImageUpload from "../../../config/api/event/imageUpload";
 
-class ImageArticleUploadTools extends Component {
+class ImageArticleEventUploadTools extends Component {
   constructor(props) {
     super(props);
     this.inputFileRef = createRef();
@@ -38,7 +38,7 @@ class ImageArticleUploadTools extends Component {
     formdata.append("image", file);
     formdata.append("id", this.props.id);
     console.log(formdata);
-    const resp = await APIDonasiImageUpload(formdata);
+    const resp = await APIEventImageUpload(formdata);
     console.log(resp);
     if (resp.statusText === "OK") {
       this.setSnackbar({
@@ -162,4 +162,4 @@ class ImageArticleUploadTools extends Component {
   }
 }
 
-export default ImageArticleUploadTools;
+export default ImageArticleEventUploadTools;

@@ -53,10 +53,6 @@ export default function MenuArticle() {
                         title="Daftar Article"
                         href={"/article"}
                     />
-                    <ListMenuSub
-                        title="Article Baru"
-                        href={"/article/add"}
-                    />
                 </List>
             </Collapse>
         </>
