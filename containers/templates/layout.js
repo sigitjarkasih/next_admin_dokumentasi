@@ -15,6 +15,7 @@ import { Drawer } from "@mui/material";
 const Layout = ({ children }) => {
   const context = useContext(AppContext);
   const router = useRouter();
+  // const token = GetToken();
   const [drawerOpen, setDrawerOpen] = React.useState(true);
 
   const handleLogOut = async () => {
@@ -31,38 +32,38 @@ const Layout = ({ children }) => {
     router.push("/account/signin");
   };
 
-  async function getDataUser() {
-    // REFRESH CONTEXT USER
-    const resp = await ReloadUser();
+  // async function getDataUser() {
+  //   // REFRESH CONTEXT USER
+  //   const resp = await ReloadUser();
 
-    if (resp != null) {
-      if (resp.is_admin === 0) {
-        alert("Anda tidak mempunyai izin untuk membuka panel admin!!!");
-        router.push("/account/signin");
-      }
-      await context.setUser(resp);
-
-      // UPDATE STATUS LOG IN
-      await context.setLoggedIn(true);
-    } else {
-      SetToken("");
-      router.push("/account/signin");
-    }
-  }
-
-  //   useEffect(() => {
-  //     if (token) {
-  //       if (token === "error") {
-  //         SetToken("");
-  //         router.push("/account/signin");
-  //       }
-  //       if (context.loggedIn === false) {
-  //         getDataUser();
-  //       }
-  //     } else {
+  //   if (resp != null) {
+  //     if (resp.is_admin === 0) {
+  //       alert("Anda tidak mempunyai izin untuk membuka panel admin!!!");
   //       router.push("/account/signin");
   //     }
-  //   });
+  //     await context.setUser(resp);
+
+  //     // UPDATE STATUS LOG IN
+  //     await context.setLoggedIn(true);
+  //   } else {
+  //     SetToken("");
+  //     router.push("/account/signin");
+  //   }
+  // }
+
+  useEffect(() => {
+    // if (token) {
+    //   if (token === "error") {
+    //     SetToken("");
+    //     router.push("/account/signin");
+    //   }
+    //   if (context.loggedIn === false) {
+    //     getDataUser();
+    //   }
+    // } else {
+    //   router.push("/account/signin");
+    // }
+  });
 
   return (
     <div
@@ -78,12 +79,13 @@ const Layout = ({ children }) => {
         <link
           rel="icon"
           href="https://collections.dgpmall.com/image/1.03/logo.png"
+          alt="logo"
         />
-        <title>DGMALL Syariah Help Center</title>
+        <title>DGMALL Admin Centre</title>
       </Head>
 
       <Widget.AppBar
-        title="Help Center"
+        title="Admin Center"
         logo="https://collections.dgpmall.com/image/1.03/logo.png"
         context={context}
         position="sticky"

@@ -2,7 +2,7 @@ import React from "react";
 import * as Widget from "../../team/widget/";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
-import Layout from "../../containers/templates/Layout";
+import Layout from "../../containers/templates/layout";
 import AppContext from "../../config/context/app";
 import FormikTextField from "../../components/atoms/Formik/TextField";
 import FormikSelectField from "../../components/atoms/Formik/SelectField";

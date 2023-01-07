@@ -1,7 +1,7 @@
 import React from "react";
 import * as Widget from "../../team/widget";
 import { Button } from "@mui/material";
-import APIEventList from "../../config/api/event/list";
+import APISyariahAreaList from "../../config/api/syariaharea/list";
 import AppContext from "../../config/context/app";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +20,7 @@ class ArticlePage extends React.Component {
   static contextType = AppContext;
 
   getData = async () => {
-    const resp = await APIEventList({
+    const resp = await APISyariahAreaList({
       //   user_id: this.context.user.user_id,
     });
     if (resp.status === 200) {
@@ -43,8 +43,8 @@ class ArticlePage extends React.Component {
             <title>DGMall Syariah Dokumentasi</title>
             <link rel="icon" href="/logoDgmall.png" />
           </Head>
-          <Widget.PageHeader title="Dokumentasi Article Event" />
-          <Link href="./event/add">
+          <Widget.PageHeader title="Dokumentasi Article Staycation" />
+          <Link href="./syariaharea/add">
             <Button variant="outlined" color="success">
               Create Article
             </Button>
@@ -98,7 +98,7 @@ class ArticlePage extends React.Component {
                     },
                     {
                       value: (
-                        <Link href={`./event/edit?id=${row.id}`}>
+                        <Link href={`./syariaharea/edit?id=${row.id}`}>
                           <Button size="small" color="warning">
                             Edit
                           </Button>

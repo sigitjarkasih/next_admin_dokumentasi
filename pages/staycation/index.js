@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { url_media, url_media_local } from "../../config/url";
 import Head from "next/head";
-import Layout from "../../containers/templates/Layout";
+import Layout from "../../containers/templates/layout";
 
 class ArticlePage extends React.Component {
   constructor(props) {

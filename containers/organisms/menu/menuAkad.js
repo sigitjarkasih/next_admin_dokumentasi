@@ -7,11 +7,12 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import AppContext from "../../../config/context/app";
+import Link from "next/link";
 
-export default function MenuAkad() {
+export default function MenuLogin() {
   const [open, setOpen] = React.useState(false);
   const context = React.useContext(AppContext);
-  const menu = "Akad";
+  const menu = "Akad Transaksi";
 
   const handleClick = () => {
     // var data = context.menuCollapse;
@@ -36,23 +37,25 @@ export default function MenuAkad() {
 
   return (
     <>
-      <ListMenu
-        title="Akad Transaksi"
-        icon={<InventoryIcon fontSize="small" />}
-        iconStatus={
-          open ? (
-            <ExpandLess style={{ color: "GrayText" }} />
-          ) : (
-            <ExpandMore style={{ color: "GrayText" }} />
-          )
-        }
-        onClick={handleClick}
-      />
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Link href="/akadtransaksi">
+        <ListMenu
+          title="Akad Transaksi"
+          icon={<InventoryIcon fontSize="small" />}
+          // iconStatus={
+          //   open ? (
+          //     <ExpandLess style={{ color: "GrayText" }} />
+          //   ) : (
+          //     <ExpandMore style={{ color: "GrayText" }} />
+          //   )
+          // }
+          // onClick={handleClick}
+        />
+      </Link>
+      {/* <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListMenuSub title="Daftar Akad Transaksi" href={"/akadtransaksi"} />
+          <ListMenuSub title="Daftar Login" href={"/login"} />
         </List>
-      </Collapse>
+      </Collapse> */}
     </>
   );
 }

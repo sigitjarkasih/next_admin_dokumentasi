@@ -9,6 +9,7 @@ import MenuDompetMadrasah from './menuMadrasah';
 import MenuPembeli from './menuPembeli';
 import MenuPenjual from './menuPenjual';
 import MenuStaycation from './menuStaycation';
+import MenuSyariaharea from './menuSyariaharea';
 import AppContext from '../../../config/context/app';
 
 
@@ -31,6 +32,7 @@ export default function Menu() {
             {"staycation" ? <MenuStaycation /> : <></>}
             {"donasi" ? <MenuDonasi /> : <></>}
             {"Akad Transaksi" ? <MenuAkad /> : <></>}
+            {"Syariah Area" ? <MenuSyariaharea /> : <></>}
           </div>
           // ) : (<></>)
         }

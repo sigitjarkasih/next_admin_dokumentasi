@@ -7,8 +7,9 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import AppContext from "../../../config/context/app";
+import Link from "next/link";
 
-export default function MenuEvent() {
+export default function MenuLogin() {
   const [open, setOpen] = React.useState(false);
   const context = React.useContext(AppContext);
   const menu = "Event";
@@ -36,23 +37,25 @@ export default function MenuEvent() {
 
   return (
     <>
-      <ListMenu
-        title="Event"
-        icon={<InventoryIcon fontSize="small" />}
-        iconStatus={
-          open ? (
-            <ExpandLess style={{ color: "GrayText" }} />
-          ) : (
-            <ExpandMore style={{ color: "GrayText" }} />
-          )
-        }
-        onClick={handleClick}
-      />
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Link href="/event">
+        <ListMenu
+          title="Event"
+          icon={<InventoryIcon fontSize="small" />}
+          // iconStatus={
+          //   open ? (
+          //     <ExpandLess style={{ color: "GrayText" }} />
+          //   ) : (
+          //     <ExpandMore style={{ color: "GrayText" }} />
+          //   )
+          // }
+          // onClick={handleClick}
+        />
+      </Link>
+      {/* <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListMenuSub title="Daftar Event" href={"/event"} />
+          <ListMenuSub title="Daftar Login" href={"/login"} />
         </List>
-      </Collapse>
+      </Collapse> */}
     </>
   );
 }

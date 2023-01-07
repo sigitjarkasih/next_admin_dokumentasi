@@ -9,10 +9,10 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import AppContext from "../../../config/context/app";
 import Link from "next/link";
 
-export default function MenuLogin() {
+export default function MenuSyariaharea() {
   const [open, setOpen] = React.useState(false);
   const context = React.useContext(AppContext);
-  const menu = "Penjual";
+  const menu = "Syariah Area";
 
   const handleClick = () => {
     // var data = context.menuCollapse;
@@ -37,9 +37,9 @@ export default function MenuLogin() {
 
   return (
     <>
-      <Link href="/penjual">
+      <Link href="/syariaharea">
         <ListMenu
-          title="Penjual"
+          title="Syariah Area"
           icon={<InventoryIcon fontSize="small" />}
           // iconStatus={
           //   open ? (

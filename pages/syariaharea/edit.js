@@ -7,16 +7,16 @@ import AppContext from "../../config/context/app";
 import FormikTextField from "../../components/atoms/Formik/TextField";
 import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box, Button, Stack, Typography, Container, Grid } from "@mui/material";
-import APIDompetMadrasahListById from "../../config/api/dompetmadrasah/listById";
-import ImageArticleDompetmadrasahUploadTools from "../../components/molecules/vacationEdit/ImageArticleDompetmadrasahUploadTools";
+import APISyariahAreaListById from "../../config/api/staycation/listById";
+import ImageArticleSyariahAreaUploadTools from "../../components/molecules/vacationEdit/imageArticleSyariahAreaUploadTools";
 import ConfirmationDialog from "../../components/molecules/vacationEdit/confirmationDialog";
 import Router, { withRouter } from "next/router";
-import APIDompetMadrasahUpdate from "../../config/api/dompetmadrasah/update";
-import APIDompetMadrasahDelete from "../../config/api/dompetmadrasah/delete";
+import APISyariahAreaUpdate from "../../config/api/syariaharea/update";
+import APISyariahAreaDelete from "../../config/api/syariaharea/delete";
 import Textarea from "../../components/molecules/vacationEdit/Textarea";
 
 export async function getServerSideProps(context) {
-  const res = await APIDompetMadrasahListById({
+  const res = await APISyariahAreaListById({
     id: context.query.id,
   });
   const data = await res.data[0];
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-class DonasiUpdate extends React.Component {
+class SyariahAreaUpdate extends React.Component {
   state = {
     snackbar: { message: "", open: false },
   };
@@ -65,13 +65,13 @@ class DonasiUpdate extends React.Component {
   });
 
   submitData = async (values) => {
-    const resp = await APIDompetMadrasahUpdate(values);
+    const resp = await APISyariahAreaUpdate(values);
     if (resp.data === "success") {
       this.setState({
         open: true,
         message: "Update Berhasil",
       });
-      Router.push("/dompetmadrasah/");
+      Router.push("/syariaharea/");
     } else {
       this.setState({
         open: true,
@@ -102,7 +102,7 @@ class DonasiUpdate extends React.Component {
   deleteArticle = async () => {
     let data = {};
     data.id = this.props.data["id"];
-    const resp = await APIDompetMadrasahDelete(data);
+    const resp = await APISyariahAreaDelete(data);
     if (resp.data === "success") {
       this.context.setSnackbar({
         open: true,
@@ -113,7 +113,7 @@ class DonasiUpdate extends React.Component {
         open: false,
       });
 
-      Router.push("/dompetmadrasah/");
+      Router.push("/syariaharea/");
     }
   };
 
@@ -176,12 +176,12 @@ class DonasiUpdate extends React.Component {
                   <Button color="error" onClick={this.handleDelete}>
                     Hapus
                   </Button>
-                  <Button href="/dompetmadrasah/">Daftar Artikel</Button>
+                  <Button href="/syariaharea/">Daftar Artikel</Button>
                 </Stack>
                 <Widget.Box>
                   <Box mb={3}>
                     <Typography>Image</Typography>
-                    <ImageArticleDompetmadrasahUploadTools
+                    <ImageArticleSyariahAreaUploadTools
                       id={this.state.id}
                       image_link={this.state.image_link}
                       image_width={100}
@@ -246,7 +246,7 @@ class DonasiUpdate extends React.Component {
     );
   }
 }
-export default DonasiUpdate;
+export default SyariahAreaUpdate;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },
