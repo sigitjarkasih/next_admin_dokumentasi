@@ -10,7 +10,7 @@ import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box } from "@mui/material";
 import APIRegisterCreate from "../../config/api/register/create";
 
-class DonasiAdd extends React.Component {
+class RegisterAdd extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,18 +27,7 @@ class DonasiAdd extends React.Component {
 
   submitData = async (values) => {
     const resp = await APIRegisterCreate(values);
-    if (resp.data != "") {
-      this.context.setSnackbar({
-        open: true,
-        message: "Submit Berhasil",
-      });
-      Router.push(`/register/edit?id=${resp.data}`);
-    } else {
-      this.context.setSnackbar({
-        open: true,
-        message: resp.statusText,
-      });
-    }
+    Router.push(`/register/`);
   };
 
   keepSelectProField = (data) => {
@@ -111,7 +100,7 @@ class DonasiAdd extends React.Component {
   }
 }
 
-export default DonasiAdd;
+export default RegisterAdd;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },

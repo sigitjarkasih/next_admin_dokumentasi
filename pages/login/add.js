@@ -10,7 +10,7 @@ import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box } from "@mui/material";
 import APILoginCreate from "../../config/api/login/create";
 
-class DonasiAdd extends React.Component {
+class LoginAdd extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,18 +27,8 @@ class DonasiAdd extends React.Component {
 
   submitData = async (values) => {
     const resp = await APILoginCreate(values);
-    if (resp.data != "") {
-      this.context.setSnackbar({
-        open: true,
-        message: "Submit Berhasil",
-      });
-      Router.push(`/login/edit?id=${resp.data}`);
-    } else {
-      this.context.setSnackbar({
-        open: true,
-        message: resp.statusText,
-      });
-    }
+      // Router.push(`/login/edit?id=${resp.data}`);
+      Router.push(`/login`);
   };
 
   keepSelectProField = (data) => {
@@ -111,7 +101,7 @@ class DonasiAdd extends React.Component {
   }
 }
 
-export default DonasiAdd;
+export default LoginAdd;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },

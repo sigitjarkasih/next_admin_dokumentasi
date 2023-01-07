@@ -106,18 +106,7 @@ class DonasiUpdate extends React.Component {
     let data = {};
     data.id = this.props.data["id"];
     const resp = await APIRegisternDelete(data);
-    if (resp.data === "success") {
-      this.context.setSnackbar({
-        open: true,
-        message: "Article berhasil dihapus",
-      });
-
-      this.setState({
-        open: false,
-      });
-
-      Router.push("/donasi/");
-    }
+    Router.push("/register/");
   };
 
   keepSelectProField = (data) => {

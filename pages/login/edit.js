@@ -106,18 +106,7 @@ class LoginUpdate extends React.Component {
     let data = {};
     data.id = this.props.data["id"];
     const resp = await APILoginDelete(data);
-    if (resp.data === "success") {
-      this.context.setSnackbar({
-        open: true,
-        message: "Article berhasil dihapus",
-      });
-
-      this.setState({
-        open: false,
-      });
-
-      Router.push("/login/");
-    }
+    Router.push("/login/");
   };
 
   keepSelectProField = (data) => {
