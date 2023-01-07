@@ -8,7 +8,7 @@ import FormikTextField from "../../components/atoms/Formik/TextField";
 import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box, Button, Stack, Typography, Container, Grid } from "@mui/material";
 import APIDompetMadrasahListById from "../../config/api/dompetmadrasah/listById";
-import ImageArticleDompetmadrasahUploadTools from "../../components/molecules/vacationEdit/ImageArticleDompetmadrasahUploadTools";
+import ImageArticleDompetmadrasahUploadTools from "../../components/molecules/vacationEdit/imageArticleDompetmadrasahUploadTools";
 import ConfirmationDialog from "../../components/molecules/vacationEdit/confirmationDialog";
 import Router, { withRouter } from "next/router";
 import APIDompetMadrasahUpdate from "../../config/api/dompetmadrasah/update";
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-class DonasiUpdate extends React.Component {
+class DompetMadrasahUpdate extends React.Component {
   state = {
     snackbar: { message: "", open: false },
   };
@@ -246,7 +246,7 @@ class DonasiUpdate extends React.Component {
     );
   }
 }
-export default DonasiUpdate;
+export default DompetMadrasahUpdate;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },
