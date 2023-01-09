@@ -23,6 +23,7 @@ class ArticlePage extends React.Component {
     const resp = await APILoginList({
       //   user_id: this.context.user.us er_id,
     });
+    console.log(resp);
     if (resp.status === 200) {
       this.setState({
         data: resp.data,

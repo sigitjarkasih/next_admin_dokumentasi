@@ -44,7 +44,7 @@ class DonasiPage extends React.Component {
             <title>DGMall Syariah Dokumentasi</title>
             <link rel="icon" href="/logoDgmall.png" />
           </Head>
-          <Widget.PageHeader title="Dokumentasi Article" />
+          <Widget.PageHeader title="Dokumentasi Article Donasi" />
           <Button variant="outlined" color="success" href="./donasi/add">
             Create Article
           </Button>

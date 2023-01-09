@@ -43,7 +43,7 @@ class ArticlePage extends React.Component {
             <title>DGMall Syariah Dokumentasi</title>
             <link rel="icon" href="/logoDgmall.png" />
           </Head>
-          <Widget.PageHeader title="Dokumentasi Article Staycation" />
+          <Widget.PageHeader title="Dokumentasi Article Syariah Area" />
           <Link href="./syariaharea/add">
             <Button variant="outlined" color="success">
               Create Article
