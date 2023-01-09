@@ -13,8 +13,6 @@ import ConfirmationDialog from "../../components/molecules/vacationEdit/confirma
 import Router, { withRouter } from "next/router";
 import APIStaycationUpdate from "../../config/api/staycation/update";
 import APIStaycationDelete from "../../config/api/staycation/delete";
-// import TiptapEditor from "../../../components/vacationEdit/tiptapEditor";
-// import TipTap from "../../../components/vacationEdit/Tiptap";
 import Textarea from "../../components/molecules/vacationEdit/Textarea";
 
 export async function getServerSideProps(context) {

@@ -168,7 +168,7 @@ class DonasiUpdate extends React.Component {
                   <Button color="error" onClick={this.handleDelete}>
                     Hapus
                   </Button>
-                  <Button href="/donasi/">Daftar Artikel</Button>
+                  <Button href="/register/">Daftar Artikel</Button>
                 </Stack>
                 <Widget.Box>
                   <Box mb={3}>

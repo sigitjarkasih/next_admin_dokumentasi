@@ -5,6 +5,7 @@ const nextConfig = {
     domains: [
       "127.0.0.1",
       "collections.dgpmall.com",
+      "documentation.dgmall.id",
     ],
   },
   eslint: {

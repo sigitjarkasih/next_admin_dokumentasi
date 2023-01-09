@@ -27,18 +27,8 @@ class AkadTransaksiAdd extends React.Component {
 
   submitData = async (values) => {
     const resp = await APIAkadTransaksiCreate(values);
-    if (resp.data != "") {
-      this.context.setSnackbar({
-        open: true,
-        message: "Submit Berhasil",
-      });
-      Router.push(`/akadtransaksi/edit?id=${resp.data}`);
-    } else {
-      this.context.setSnackbar({
-        open: true,
-        message: resp.statusText,
-      });
-    }
+    // console.log(resp);
+    Router.push(`/akadtransaksi`);
   };
 
   keepSelectProField = (data) => {
@@ -66,7 +56,7 @@ class AkadTransaksiAdd extends React.Component {
           {(formik) => (
             <Form>
               <Widget.Paper>
-                <Widget.PageHeader title="Create Article Akad Transaski" />
+                <Widget.PageHeader title="Create Article Akad Transaksi" />
                 <Widget.Box>
                   <FrameField
                     title="Master Judul"

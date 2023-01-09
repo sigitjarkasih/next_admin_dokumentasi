@@ -12,7 +12,7 @@ const APIStaycationListById = async (data) => {
       "Content-Type": "application/json",
       //   Authorization: "BASIC " + token,
     },
-    url: `${url_service}/staycation/listbyid/`,
+    url: `${url_service}/syariaharea/listbyid/`,
     data: data,
   })
     .then(function (response) {

@@ -9,7 +9,7 @@ import { url_media, url_media_local } from "../../config/url";
 import Head from "next/head";
 import Layout from "../../containers/templates/layout";
 
-class akadtransaski extends React.Component {
+class Akadtransaski extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,11 +23,13 @@ class akadtransaski extends React.Component {
     const resp = await APIAkadTransaksiList({
       // user_id: this.context.user.user_id,
     });
+    console.log(resp);
     if (resp.status === 200) {
       this.setState({
         data: resp.data,
       });
     }
+    console.log(resp.data);
   };
 
   componentDidMount() {
@@ -43,7 +45,7 @@ class akadtransaski extends React.Component {
             <title>DGMall Syariah Dokumentasi</title>
             <link rel="icon" href="/logoDgmall.png" />
           </Head>
-          <Widget.PageHeader title="Dokumentasi Article Akad Transaski" />
+          <Widget.PageHeader title="Dokumentasi Article Akad Transaksi" />
           <Link href="./akadtransaksi/add">
             <Button variant="outlined" color="success">
               Create Article
@@ -121,4 +123,4 @@ class akadtransaski extends React.Component {
   }
 }
 
-export default akadtransaski;
+export default Akadtransaski;

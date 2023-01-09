@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
     id: context.query.id,
   });
   const data = await res.data[0];
-
+  
   return {
     props: { data },
   };
