@@ -27,8 +27,9 @@ class LoginAdd extends React.Component {
 
   submitData = async (values) => {
     const resp = await APILoginCreate(values);
-      // Router.push(`/login/edit?id=${resp.data}`);
-      Router.push(`/login`);
+    console.log(resp);
+    // Router.push(`/login/edit?id=${resp.data}`);
+    // Router.push(`/login`);
   };
 
   keepSelectProField = (data) => {
