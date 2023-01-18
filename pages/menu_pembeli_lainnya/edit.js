@@ -8,7 +8,7 @@ import FormikTextField from "../../components/atoms/Formik/TextField";
 import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box, Button, Stack, Typography, Container, Grid } from "@mui/material";
 import APIPembeliLainnyaListById from "../../config/api/dokumentasi_pembeli/lainnya/listById";
-import ImageArticlePembeliLainnyaUploadTools from "../../components/molecules/vacationEdit/pembeli/imageArticlepembelilainnya";
+import ImageArticlePembeliLainnyaUploadTools from "../../components/molecules/vacationEdit/pembeli/imageArticlePembeliLainnya";
 import ConfirmationDialog from "../../components/molecules/vacationEdit/confirmationDialog";
 import Router, { withRouter } from "next/router";
 import Head from "next/head";
@@ -27,7 +27,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-class LoginUpdate extends React.Component {
+class PembeliLainnyaUpdate extends React.Component {
   state = {
     snackbar: { message: "", open: false },
   };
@@ -236,7 +236,7 @@ class LoginUpdate extends React.Component {
     );
   }
 }
-export default LoginUpdate;
+export default PembeliLainnyaUpdate;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },
