@@ -1,5 +1,5 @@
 import axios from "axios";
-import { url_service } from "../../url";
+import { url_service } from "../../../url";
 // import Cookies from "universal-cookie";
 
 const APIPembeliPengembaliandanaImageUpload = async (data) => {

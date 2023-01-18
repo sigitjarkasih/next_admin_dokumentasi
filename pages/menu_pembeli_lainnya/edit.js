@@ -7,19 +7,17 @@ import AppContext from "../../config/context/app";
 import FormikTextField from "../../components/atoms/Formik/TextField";
 import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box, Button, Stack, Typography, Container, Grid } from "@mui/material";
-import APILoginListById from "../../config/api/login/listById";
-import ImageArticleLoginUploadTools from "../../components/molecules/vacationEdit/imageArticleLoginUploadTools";
+import APIPembeliLainnyaListById from "../../config/api/dokumentasi_pembeli/lainnya/listById";
+import ImageArticlePembeliLainnyaUploadTools from "../../components/molecules/vacationEdit/pembeli/imageArticlepembelilainnya";
 import ConfirmationDialog from "../../components/molecules/vacationEdit/confirmationDialog";
 import Router, { withRouter } from "next/router";
 import Head from "next/head";
-import APILoginUpdate from "../../config/api/login/update";
-import APILoginDelete from "../../config/api/login/delete";
-// import TiptapEditor from "../../../components/vacationEdit/tiptapEditor";
-// import TipTap from "../../../components/vacationEdit/Tiptap";
+import APIPembeliLainnyaUpdate from "../../config/api/dokumentasi_pembeli/lainnya/update";
+import APIPembeliLainnyaDelete from "../../config/api/dokumentasi_pembeli/lainnya/delete";
 import Textarea from "../../components/molecules/vacationEdit/Textarea";
 
 export async function getServerSideProps(context) {
-  const res = await APILoginListById({
+  const res = await APIPembeliLainnyaListById({
     id: context.query.id,
   });
   const data = await res.data[0];
@@ -68,13 +66,13 @@ class LoginUpdate extends React.Component {
   });
 
   submitData = async (values) => {
-    const resp = await APILoginUpdate(values);
+    const resp = await APIPembeliLainnyaUpdate(values);
     if (resp.data === "success") {
       this.setState({
         open: true,
         message: "Update Berhasil",
       });
-      Router.push("/login/");
+      Router.push("/menu_pembeli_lainnya/");
     } else {
       this.setState({
         open: true,
@@ -105,8 +103,8 @@ class LoginUpdate extends React.Component {
   deleteArticle = async () => {
     let data = {};
     data.id = this.props.data["id"];
-    const resp = await APILoginDelete(data);
-    Router.push("/login/");
+    const resp = await APIPembeliLainnyaDelete(data);
+    Router.push("/menu_pembeli_lainnya/");
   };
 
   keepSelectProField = (data) => {
@@ -173,7 +171,7 @@ class LoginUpdate extends React.Component {
                 <Widget.Box>
                   <Box mb={3}>
                     <Typography>Image</Typography>
-                    <ImageArticleLoginUploadTools
+                    <ImageArticlePembeliLainnyaUploadTools
                       id={this.state.id}
                       image_link={this.state.image_link}
                       image_width={100}

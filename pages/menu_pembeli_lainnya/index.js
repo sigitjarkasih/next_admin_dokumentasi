@@ -100,7 +100,7 @@ class ArticlePage extends React.Component {
                     },
                     {
                       value: (
-                        <Link href={`./login/edit?id=${row.id}`}>
+                        <Link href={`./menu_pembeli_lainnya/edit?id=${row.id}`}>
                           <Button size="small" color="warning">
                             Edit
                           </Button>

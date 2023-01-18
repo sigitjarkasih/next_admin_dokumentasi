@@ -2,9 +2,9 @@ import { Component, createRef } from "react";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Image from "next/image";
-import { url_media, url_media_local } from "../../../config/url";
+import { url_media, url_media_local } from "../../../../config/url";
 import { Box } from "@mui/system";
-import AppContext from "../../../config/context/app";
+import AppContext from "../../../../config/context/app";
 import APIPembeliPesananImageUpload from "../../../../config/api/dokumentasi_pembeli/pesanan/imageUpload";
 
 class ImageArticlePembeliPesananUploadTools extends Component {
