@@ -10,7 +10,7 @@ import FormikSelectField from "../../components/atoms/Formik/SelectField";
 import { Box } from "@mui/material";
 import APIPembeliPromosiCreate from "../../config/api/dokumentasi_pembeli/promosi/create";
 
-class LoginAdd extends React.Component {
+class PembeliPromosiAdd extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -102,7 +102,7 @@ class LoginAdd extends React.Component {
   }
 }
 
-export default LoginAdd;
+export default PembeliPromosiAdd;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },

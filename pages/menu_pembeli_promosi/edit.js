@@ -27,7 +27,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-class LoginUpdate extends React.Component {
+class PembeliPromosiUpdate extends React.Component {
   state = {
     snackbar: { message: "", open: false },
   };
@@ -236,7 +236,7 @@ class LoginUpdate extends React.Component {
     );
   }
 }
-export default LoginUpdate;
+export default PembeliPromosiUpdate;
 
 const optionsIsActive = [
   { value: 0, label: "Tidak Aktif" },
