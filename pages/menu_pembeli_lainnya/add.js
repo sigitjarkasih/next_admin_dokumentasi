@@ -29,7 +29,7 @@ class PembeliLainnyaAdd extends React.Component {
     const resp = await APIPembeliLainnyaCreate(values);
     // console.log(resp);
     // Router.push(`/login/edit?id=${resp.data}`);
-    Router.push(`/menu_pembeli_akundankeamanan`);
+    Router.push(`/menu_pembeli_lainnya`);
   };
 
   keepSelectProField = (data) => {

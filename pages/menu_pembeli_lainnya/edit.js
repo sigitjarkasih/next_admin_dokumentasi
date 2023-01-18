@@ -166,7 +166,7 @@ class LoginUpdate extends React.Component {
                   <Button color="error" onClick={this.handleDelete}>
                     Hapus
                   </Button>
-                  <Button href="/login/">Daftar Artikel</Button>
+                  <Button href="/menu_pembeli_lainnya/">Daftar Artikel</Button>
                 </Stack>
                 <Widget.Box>
                   <Box mb={3}>
