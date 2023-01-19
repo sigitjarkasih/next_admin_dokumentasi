@@ -18,6 +18,12 @@ import MenuPengembalianDana from "./pembeli/pengembaliandana";
 import MenuPembeliPengiriman from "./pembeli/pengiriman";
 import MenuPembeliPesanan from "./pembeli/pesanan";
 import MenuPembeliPromosi from "./pembeli/promosi";
+import MenuAkundanKeamananToko from "./penjual/akundankeamananpenjual";
+import MenuFiturPenjual from "./penjual/fiturpenjual";
+import MenuKomplainPesananPenjual from "./penjual/komplainpesanantoko";
+import MenuPenjualPengirimanProduk from "./penjual/pengirimanproduk";
+import MenuPenjualLainnya from "./penjual/penjual_lainnya";
+import MenuPenjualProsesPesanan from "./penjual/prosespesanan";
 import AppContext from "../../../config/context/app";
 
 export default function Menu() {
@@ -48,6 +54,16 @@ export default function Menu() {
           {"Pembeli_Pengiriman" ? <MenuPembeliPengiriman /> : <></>}
           {"Pembeli_Pesanan" ? <MenuPembeliPesanan /> : <></>}
           {"Pembeli_Promosi" ? <MenuPembeliPromosi /> : <></>}
+          {"Penjual_akun dan Keamanan" ? <MenuAkundanKeamananToko /> : <></>}
+          {"Penjual_FiturPenjual" ? <MenuFiturPenjual /> : <></>}
+          {"Penjual_Komplain Pesanan" ? <MenuKomplainPesananPenjual /> : <></>}
+          {"Penjual_Pengiriman Produk" ? (
+            <MenuPenjualPengirimanProduk />
+          ) : (
+            <></>
+          )}
+          {"Penjual_Lainnya" ? <MenuPenjualLainnya /> : <></>}
+          {"Penjual_Proses Pesanan" ? <MenuPenjualProsesPesanan /> : <></>}
         </div>
         // ) : (<></>)
       }
