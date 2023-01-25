@@ -1,5 +1,15 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import { AppProvider } from "../config/context/app";
+import NextNProgress from "nextjs-progressbar";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  const contextData = {};
+  return (
+    <AppProvider value={contextData}>
+      <NextNProgress height={70} />
+      <Component {...pageProps} />
+    </AppProvider>
+  );
 }
+
+export default MyApp;
